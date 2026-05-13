@@ -1,0 +1,32 @@
+POLDA WPF + C# - ročníkový projekt
+
+
+1. část - PŘED DOMEM MILIONÁŘE
+
+
+CÍL: Budu se muset dostat dovnitř domu.
+
+CO MUSÍM UDĚLAT: 
+	1. zničit bezpečnostní kameru (zasprejovat ji sprejem co ležel na zemi)
+	2. najít klíč (za květináčem na parapetu okna)
+
+CO NESMÍM UDĚLAT: 
+	1. Rozbít kameru (bude se dát kliknout na kámen, kterej se "hodí" na kameru aby se rozbila)
+	2. Otevřít dveře (kliknout na ně) než budu mít klíč -> začne alarm
+		
+
+
+2. část - V KANCELÁŘI
+
+CÍL: Získat 4místný kód od sejfu se zlatem a ukradnout ho
+
+CO MUSÍM UDĚLAT: 
+	1. Otevřít šuplík (je zde jeho občanka s rokem narození -> 67 - druhá část kódu)
+	2. Na zdi je dres fotbalisty, který má na zádech číslo 11 - první část kódu
+	3. Kliknout na trezor, zadat pin kód (1167 -> KONEC HRY)
+
+CO NESMÍM UDĚLAT:
+	1. Kliknout na telefon na stole (spustí se alarm)
+	2. Kliknout na sošku co je vystavená (shodí ji a spustí se alarm)
+	3. Zadat špatné heslo do trezoru
+

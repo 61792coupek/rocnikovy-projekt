@@ -1,0 +1,231 @@
+﻿<Window x:Class="rocnikovy_projekt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:rocnikovy_projekt"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Viewbox Stretch="Fill">
+        <Grid Width="800" Height="450">
+            
+            <!--> MENU <-->
+            <Grid Name="Menu" Visibility="Visible">
+                <Grid.Resources>
+                    <!-- Styl je umístěn POUZE uvnitř této scény -->
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#02FFFFFF"/>
+                        <Setter Property="BorderBrush" Value="{x:Null}"/>
+                        <Setter Property="Foreground" Value="{x:Null}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="border" Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="Transparent"/>
+                                        </Trigger>
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="Transparent"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Grid.Resources>
+                <Image Source="/menu.png" Stretch="Fill" IsHitTestVisible="False" />
+
+                <Button x:Name="btn_start" Content="" HorizontalAlignment="Center" Margin="0,184,0,0" VerticalAlignment="Top" Height="78" Width="229" Background="#02FFFFFF" Click="btn_start_Click" Foreground="{x:Null}" BorderBrush="{x:Null}"/>
+                <Button x:Name="btn_ukoncit" Content="" HorizontalAlignment="Center" Margin="0,272,0,0" VerticalAlignment="Top" Height="74" Width="228" Background="#02000000" Click="btn_ukoncit_Click" Foreground="{x:Null}" BorderBrush="{x:Null}"/>
+
+            </Grid>
+
+            <!--> SCÉNA 1 <-->
+            <Grid Name="Scena1" Visibility="Collapsed">
+                <Grid.Resources>
+                    <!-- Styl je umístěn POUZE uvnitř této scény -->
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#02FFFFFF"/>
+                        <Setter Property="BorderBrush" Value="{x:Null}"/>
+                        <Setter Property="Foreground" Value="{x:Null}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="border" Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="Transparent"/>
+                                        </Trigger>
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="Transparent"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Grid.Resources>
+                <Image Name="MapImage" Source="/pozadi1.png" Stretch="Fill" IsHitTestVisible="False" />
+
+                <Rectangle HorizontalAlignment="Left" Height="108" Margin="21,332,0,0" Stroke="Black" VerticalAlignment="Top" Width="228" Fill="#7F000000"/>
+                <TextBlock HorizontalAlignment="Left" Margin="21,332,0,0" TextWrapping="Wrap" Text="{Binding DialogText}" VerticalAlignment="Top" Height="108" Width="228" Padding="5" Foreground="White"/>
+
+                <Rectangle HorizontalAlignment="Left" Height="79" Margin="21,24,0,0" Stroke="Black" VerticalAlignment="Top" Width="178" Fill="#7F000000"/>
+                <TextBlock HorizontalAlignment="Left" Margin="21,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="79" Width="178" Padding="5" Foreground="White" Text="{Binding InventarText}"/>
+
+                <Button x:Name="btn_kvetinac" Content="Květináč" HorizontalAlignment="Left" Margin="218,187,0,0" VerticalAlignment="Top" Height="109" Width="90" Background="#02FFFFFF" Click="btn_kvetinac_Click" Foreground="{x:Null}" BorderBrush="{x:Null}"/>
+                <Button x:Name="btn_kamen" Content="Kámen" HorizontalAlignment="Left" Margin="286,380,0,0" VerticalAlignment="Top" Height="60" Width="86" Background="#02FFFFFF" Click="btn_kamen_Click" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+                <Button x:Name="btn_spray" Content="Spray" HorizontalAlignment="Left" Margin="539,334,0,0" VerticalAlignment="Top" Height="40" Width="71" Background="#02FFFFFF" Click="btn_spray_Click" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+                <Button x:Name="btn_dvere" Content="Dveře" HorizontalAlignment="Left" Margin="384,153,0,0" VerticalAlignment="Top" Height="168" Width="110" Background="#02FFFFFF" Click="btn_dvere_Click" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+                <Button x:Name="btn_obejitZezadu" Content="Obejít zezadu" HorizontalAlignment="Left" Margin="710,153,0,0" VerticalAlignment="Top" Height="152" Width="90" Background="#02FFFFFF" Click="btn_obejitZezadu_Click" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+                <Button x:Name="btn_kamera" Content="Kamera" HorizontalAlignment="Center" VerticalAlignment="Top" Height="63" Width="84" Background="#02FFFFFF" Click="btn_kamera_Click" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+                <Button x:Name="btn_rukavice" Content="Rukavice" HorizontalAlignment="Left" Margin="668,389,0,0" VerticalAlignment="Top" Height="51" Width="84" Background="#02FFFFFF" Click="btn_rukavice_Click" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+                <Button x:Name="btn_ker" Content="Keř" HorizontalAlignment="Left" Margin="551,225,0,0" VerticalAlignment="Top" Height="92" Width="131" Background="#02FFFFFF" Click="btn_ker_Click" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+            </Grid>
+
+            <!--> SCÉNA 2 <-->
+            <Grid Name="Scena2" Visibility="Collapsed">
+                <Grid.Resources>
+                    <!-- Styl je umístěn POUZE uvnitř této scény -->
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#02FFFFFF"/>
+                        <Setter Property="BorderBrush" Value="{x:Null}"/>
+                        <Setter Property="Foreground" Value="{x:Null}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="border" Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="Transparent"/>
+                                        </Trigger>
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="Transparent"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Grid.Resources>
+                <Image Source="/pozadi2.png" Stretch="Fill" IsHitTestVisible="False" />
+
+                <Rectangle HorizontalAlignment="Left" Height="108" Margin="21,332,0,0" Stroke="Black" VerticalAlignment="Top" Width="228" Fill="#7F000000"/>
+                <TextBlock HorizontalAlignment="Left" Margin="21,332,0,0" TextWrapping="Wrap" Text="{Binding DialogText}" VerticalAlignment="Top" Height="108" Width="228" Padding="5" Foreground="White"/>
+
+                <Rectangle HorizontalAlignment="Left" Height="144" Margin="698,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="92" Fill="#7F000000"/>
+                <TextBlock HorizontalAlignment="Left" Margin="698,10,0,0" TextWrapping="Wrap" Text="{Binding Vypsano}" VerticalAlignment="Top" Height="144" Width="92" Padding="5" Foreground="White"/>
+
+
+                <Button x:Name="btn_taska" Content="Taška" HorizontalAlignment="Left" Margin="659,378,0,0" VerticalAlignment="Top" Height="72" Width="131" Background="#02FFFFFF" Click="btn_taska_Click" BorderBrush="{x:Null}" Foreground="{x:Null}"></Button>
+                <Button x:Name="btn_suplik" Content="Šuplík" HorizontalAlignment="Left" Margin="379,318,0,0" VerticalAlignment="Top" Height="68" Width="252" Background="#02FFFFFF" Click="btn_suplik_Click" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="32.544"/>
+                            <RotateTransform Angle="-8.8"/>
+                            <TranslateTransform X="31.642" Y="-5.576"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <Button x:Name="btn_policka" Content="Polička" HorizontalAlignment="Left" Margin="532,22,0,0" VerticalAlignment="Top" Height="190" Width="96" Background="#02FFFFFF" Click="btn_policka_Click" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+                <Button x:Name="btn_telefon" Content="Telefon" HorizontalAlignment="Left" Margin="165,168,0,0" VerticalAlignment="Top" Height="132" Width="125" Background="#02FFFFFF" Click="btn_telefon_Click" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="0"/>
+                            <RotateTransform/>
+                            <TranslateTransform X="0"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <Button x:Name="btn_dopis" Content="Dopis" HorizontalAlignment="Left" Margin="225,294,0,0" VerticalAlignment="Top" Height="19" Width="63" Background="#02FFFFFF" Click="btn_dopis_Click" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="42.491"/>
+                            <RotateTransform Angle="-12.149"/>
+                            <TranslateTransform X="8.376" Y="-2.359"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <Button x:Name="btn_slozka" Content="Složka" HorizontalAlignment="Left" Margin="290,249,0,0" VerticalAlignment="Top" Height="55" Width="85" Background="#02FFFFFF" Click="btn_slozka_Click" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="44.766"/>
+                            <RotateTransform Angle="-17.352"/>
+                            <TranslateTransform X="39.675"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <Button x:Name="btn_Mapa" Content="Mapa" HorizontalAlignment="Left" Margin="434,261,0,0" VerticalAlignment="Top" Height="36" Width="78" Background="#02FFFFFF" Click="btn_mapa_Click" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="54.618"/>
+                            <RotateTransform Angle="-10.422"/>
+                            <TranslateTransform X="24.926" Y="-4.585"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <Button x:Name="btn_socha" Content="Socha" HorizontalAlignment="Left" Margin="567,161,0,0" VerticalAlignment="Top" Height="102" Width="52" Background="#02FFFFFF" Click="btn_socha_Click" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+                <Button x:Name="btn_denik" Content="Deník" HorizontalAlignment="Left" Margin="630,249,0,0" VerticalAlignment="Top" Height="22" Width="75" Background="#02FFFFFF" Click="btn_denik_Click" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+                <Button x:Name="btn_pero" Content="Pero" HorizontalAlignment="Left" Margin="125,212,0,0" VerticalAlignment="Top" Height="96" Width="57" Background="#02FFFFFF" Click="btn_pero_Click" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="20.94"/>
+                            <RotateTransform/>
+                            <TranslateTransform X="18.367"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <Button x:Name="btn_dres" Content="Dres" HorizontalAlignment="Left" Margin="188,-2,0,0" VerticalAlignment="Top" Height="151" Width="165" Background="#02FFFFFF" Click="btn_dres_Click" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="0.998"/>
+                            <SkewTransform AngleY="-2.526" AngleX="2.038"/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-2.147" X="2.683"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <Button x:Name="btn_obraz" Content="Obraz" HorizontalAlignment="Left" Margin="426,47,0,0" VerticalAlignment="Top" Height="62" Width="75" Background="#02FFFFFF" Click="btn_obraz_Click" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+                <Button x:Name="btn_policka2" Content="Polička" HorizontalAlignment="Left" VerticalAlignment="Top" Height="225" Width="82" Background="#02FFFFFF" Click="btn_policka_Click" BorderBrush="#01000000" Foreground="#02000000"/>
+                <Button x:Name="btn_vesak" Content="Věšák" HorizontalAlignment="Left" Margin="646,113,0,0" VerticalAlignment="Top" Height="121" Width="52" Background="#02FFFFFF" Click="btn_vesak_Click" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+                <Button x:Name="btn_trezor" Content="Trezor" HorizontalAlignment="Left" Margin="426,133,0,0" VerticalAlignment="Top" Height="101" Width="85" Background="#02FFFFFF" Click="btn_trezor_Click" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+
+            </Grid>
+
+            <!--> TREZOR <-->
+            <Grid Name="Trezor" Visibility="Collapsed">
+                <Image Source="/trezor.png" Stretch="Fill" IsHitTestVisible="False" />
+
+                <Rectangle HorizontalAlignment="Left" Height="108" Margin="21,332,0,0" Stroke="Black" VerticalAlignment="Top" Width="228" Fill="#7F000000"/>
+                <TextBlock HorizontalAlignment="Left" Margin="21,332,0,0" TextWrapping="Wrap" Text="{Binding DialogText}" VerticalAlignment="Top" Height="108" Width="228" Padding="5" Foreground="White"/>
+
+                <Rectangle HorizontalAlignment="Left" Height="144" Margin="698,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="92" Fill="#7F000000"/>
+                <TextBlock HorizontalAlignment="Left" Margin="698,10,0,0" TextWrapping="Wrap" Text="{Binding Vypsano}" VerticalAlignment="Top" Height="144" Width="92" Padding="5" Foreground="White"/>
+
+                <!-- Přidáno x:Name a zvětšeno písmo pro lepší čitelnost -->
+                <TextBox x:Name="txt_pin" HorizontalAlignment="Left" Margin="435,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="74" Height="30" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <!-- Tlačítko na potvrzení PINu -->
+                <Button Content="Zadat PIN" HorizontalAlignment="Left" Margin="435,347,0,0" VerticalAlignment="Top" Height="30" Width="74" Click="Button_potvrdit_Click"/>
+
+                <Button Content="Zpět" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="26" Width="52" Click="Button_zpet_Click"/>
+            </Grid>
+
+        </Grid>
+    </Viewbox>
+</Window>
+
